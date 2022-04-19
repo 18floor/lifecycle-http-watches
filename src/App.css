@@ -1,38 +1,86 @@
 .App {
-  text-align: center;
+    max-width: 840px;
+    margin: 20px auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Form */
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.label {
+    padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.btn {
+    margin: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Clocks */
+.clocks-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.clock-wrapper {
+    display: flex;
+    margin: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clock-watches {
+    position: relative;
+    margin: 20px;
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.clock-hand {
+    width: 1px;
+    height: 36px;
+    position: absolute;
+    left: 40px;
+    top: 4px;
+    background: black;
+    transform-origin: 50% 100%;
+}
+
+.clock-hand-hours {
+    height: 24px;
+    top: 16px;
+}
+
+.clock-hand::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    z-index: 100;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    top: 0;
+    left: -6px;
+    transform: rotate(-45deg);
+}
+
+.clock-hand-seconds::before {
+    content: none;
+}
+
+.clock-btn {
+    position: absolute;
+    right: -12px;
+    top: -12px;
+    border-radius: 50%;
 }
